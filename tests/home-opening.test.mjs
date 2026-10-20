@@ -10,9 +10,6 @@ import { createElement } from "react";
 const root = new URL("../", import.meta.url);
 const require = createRequire(new URL("package.json", root));
 const ts = require("typescript");
-const { JSDOM } = createRequire("D:/CodexWork/tool-cache/chinese-normalization/package.json")(
-  "jsdom",
-);
 const modules = new Map();
 
 // Render the actual page and its actual local components without a server,
@@ -58,26 +55,28 @@ test("both homepages retain the approved static opening, existing intent and con
     ["en", "Sydney Roof RepairsClear advice. Practical next steps.", "/contact"],
     ["zh", "悉尼屋顶维修先确认问题与下一步", "/zh-hans/contact"],
   ]) {
-    const document = new JSDOM(renderToStaticMarkup(createElement(HomePage, { locale }))).window
-      .document;
-    const hero = document.querySelector(".home-hero");
+    const html = renderToStaticMarkup(createElement(HomePage, { locale }));
+    const hero = html.match(/<section\b[^>]*class="home-hero"[^>]*>[\s\S]*?<\/section>/)?.[0];
     assert.ok(hero, locale);
-    assert.equal(hero.querySelector("h1").textContent, h1);
-    assert.equal(document.querySelectorAll("h1").length, 1);
-    assert.ok(hero.querySelector('a[href="tel:+61405878406"]'));
-    assert.ok(hero.querySelector('a[href="#home-services"]'));
-    assert.ok(hero.querySelector('button[aria-haspopup="dialog"]'));
-    assert.ok(document.querySelector(`a[href="${contact}"]`));
-    assert.ok(document.querySelector("#home-services"));
-    assert.ok(document.querySelector("#home-task-portal"));
-    assert.equal(document.querySelectorAll("#home-task-portal .home-portal-card").length, 6);
-    const photo = hero.querySelector(".home-hero-photo img");
-    assert.equal(photo.getAttribute("src"), "/media/metal-roof-repair-overview.jpg");
-    assert.equal(photo.getAttribute("width"), "1920");
-    assert.equal(photo.getAttribute("height"), "1080");
-    assert.ok(photo.getAttribute("alt"));
-    assert.ok(fs.existsSync(new URL(`public${photo.getAttribute("src")}`, root)));
-    assert.doesNotMatch(hero.outerHTML, /aria-roledescription="carousel"|Pause automatic rotation/);
-    assert.doesNotMatch(hero.outerHTML, /hero-(ridge-inspection|metal-flashing)-closeup/);
+    const headings = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/g)];
+    assert.equal(headings.length, 1);
+    assert.equal(headings[0][1].replace(/<[^>]*>/g, ""), h1);
+    assert.match(hero, /<a\b[^>]*href="tel:\+61405878406"/);
+    assert.match(hero, /<a\b[^>]*href="#home-services"/);
+    assert.match(hero, /<button\b[^>]*aria-haspopup="dialog"/);
+    assert.ok(html.includes(`href="${contact}"`));
+    assert.match(html, /<section\b[^>]*id="home-services"/);
+    const portal = html.match(/<section\b[^>]*id="home-task-portal"[^>]*>[\s\S]*?<\/section>/)?.[0];
+    assert.ok(portal);
+    assert.equal((portal.match(/class="[^"]*\bhome-portal-card\b[^"]*"/g) ?? []).length, 6);
+    const photo = hero.match(/<figure\b[^>]*class="home-hero-photo"[^>]*>\s*(<img\b[^>]*>)/)?.[1];
+    assert.ok(photo);
+    assert.match(photo, /src="\/media\/metal-roof-repair-overview\.jpg"/);
+    assert.match(photo, /width="1920"/);
+    assert.match(photo, /height="1080"/);
+    assert.match(photo, /alt="[^"]+"/);
+    assert.ok(fs.existsSync(new URL("public/media/metal-roof-repair-overview.jpg", root)));
+    assert.doesNotMatch(hero, /aria-roledescription="carousel"|Pause automatic rotation/);
+    assert.doesNotMatch(hero, /hero-(ridge-inspection|metal-flashing)-closeup/);
   }
 });
