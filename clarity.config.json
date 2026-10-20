@@ -1,0 +1,12 @@
+{
+  "projectId": "yy15u4fmm6",
+  "hostname": "sydneyroofrepairservices.com.au",
+  "siteKind": "business",
+  "privacyPaths": {
+    "en": "/privacy",
+    "zh": "/zh-hans/privacy"
+  },
+  "excludedPaths": ["/contact", "/zh-hans/contact"],
+  "cookieDomains": ["sydneyroofrepairservices.com.au"],
+  "storageKey": "sydney-roof-repairs.clarity-consent.v1"
+}

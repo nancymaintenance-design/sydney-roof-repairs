@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.sydneyroofrepairservices.com.au"
+        }
+      ],
+      "destination": "https://sydneyroofrepairservices.com.au/:path*",
+      "permanent": true
+    }
+  ]
+}
