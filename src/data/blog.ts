@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Roof leaks", "屋顶漏水"),
     published: "2026-09-18",
     readingMinutes: 8,
-    image: "/media/tile-repair-open-section.jpg",
+    image: "",
     imageAlt: t("Open section of a tiled roof", "瓦屋顶开放部位细节"),
     relatedServiceIds: ["roof-leak-repairs-sydney", "tile-roof-repairs-sydney"],
     sections: [
@@ -109,7 +109,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Enquiry planning", "咨询准备"),
     published: "2026-09-18",
     readingMinutes: 7,
-    image: "/media/tile-roof-finished-detail.jpg",
+    image: "",
     imageAlt: t("Tiled roof surface and adjoining roof details", "瓦屋面及相邻构件细节"),
     relatedServiceIds: ["roof-leak-repairs-sydney"],
     sections: [
@@ -234,7 +234,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Storm and weather", "风暴与天气"),
     published: "2026-09-18",
     readingMinutes: 8,
-    image: "/media/tile-roof-before.jpg",
+    image: "",
     imageAlt: t("Tiled roof viewed from a safe exterior position", "从安全外部位置看到的瓦屋顶"),
     relatedServiceIds: ["storm-damage-roof-repairs-sydney", "roof-leak-repairs-sydney"],
     sections: [
@@ -298,7 +298,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Roof leaks", "屋顶漏水"),
     published: "2026-09-18",
     readingMinutes: 8,
-    image: "/media/valley-flashing-repair-01.jpg",
+    image: "",
     imageAlt: t("Visible valley flashing and adjoining tiled roof", "可见天沟谷泛水及相邻瓦屋面"),
     relatedServiceIds: ["flashing-valley-repairs-sydney", "roof-leak-repairs-sydney"],
     sections: [
@@ -362,7 +362,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Tile roofs", "瓦屋顶"),
     published: "2026-09-18",
     readingMinutes: 7,
-    image: "/media/ridge-capping-repair-detail.jpg",
+    image: "",
     imageAlt: t("Ridge capping and pointing detail", "屋脊封顶及勾缝细节"),
     relatedServiceIds: ["ridge-capping-repointing-sydney", "tile-roof-repairs-sydney"],
     sections: [
@@ -545,7 +545,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Safety", "安全"),
     published: "2026-09-18",
     readingMinutes: 7,
-    image: "/media/tile-ridge-overview.jpg",
+    image: "",
     imageAlt: t(
       "Tiled ridge viewed without suggesting customer roof access",
       "不建议客户上屋顶情况下展示的瓦屋脊画面",
@@ -612,7 +612,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Roof leaks", "屋顶漏水"),
     published: "2026-09-18",
     readingMinutes: 7,
-    image: "/media/flashing-abutment-repair.jpg",
+    image: "",
     imageAlt: t("Roof abutment and flashing detail", "屋面交接及泛水细节"),
     relatedServiceIds: ["roof-leak-repairs-sydney", "flashing-valley-repairs-sydney"],
     sections: [
@@ -673,7 +673,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Enquiry planning", "咨询准备"),
     published: "2026-09-18",
     readingMinutes: 8,
-    image: "/media/tile-roof-after.jpg",
+    image: "",
     imageAlt: t(
       "Tiled roof surface with several connected roof areas",
       "包含多个相连屋面部位的瓦屋顶",
@@ -875,7 +875,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Maintenance planning", "维护计划"),
     published: "2026-09-18",
     readingMinutes: 8,
-    image: "/media/tile-roof-finished-detail.jpg",
+    image: "",
     imageAlt: t("Tiled roof detail used for seasonal observation", "用于季节性观察的瓦屋顶细节"),
     relatedServiceIds: ["tile-roof-repairs-sydney", "storm-damage-roof-repairs-sydney"],
     sections: [

@@ -224,21 +224,23 @@ function ServiceCards({
     <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       {selectedServices.map((service, index) => (
         <article key={service.id} className="card group overflow-hidden">
-          <a href={servicePath(service, locale)} className="block no-underline">
-            <div className="relative aspect-[4/3] overflow-hidden bg-[var(--border)]">
-              <img
-                src={service.image}
-                alt={serviceText(service.imageAlt, locale)}
-                width="1080"
-                height="1440"
-                loading={index > 2 ? "lazy" : "eager"}
-                className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-              />
-              <span className="absolute left-4 top-4 rounded-full bg-[var(--accent-pale)] px-3 py-1 text-[10px] font-bold tracking-[.12em] text-[var(--ink)]">
-                {locale === "zh" ? "屋顶服务" : "ROOF SERVICE"}
-              </span>
-            </div>
-          </a>
+          {service.image ? (
+            <a href={servicePath(service, locale)} className="block no-underline">
+              <div className="relative aspect-[4/3] overflow-hidden bg-[var(--border)]">
+                <img
+                  src={service.image}
+                  alt={serviceText(service.imageAlt, locale)}
+                  width="1080"
+                  height="1440"
+                  loading={index > 2 ? "lazy" : "eager"}
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                />
+                <span className="absolute left-4 top-4 rounded-full bg-[var(--accent-pale)] px-3 py-1 text-[10px] font-bold tracking-[.12em] text-[var(--ink)]">
+                  {locale === "zh" ? "屋顶服务" : "ROOF SERVICE"}
+                </span>
+              </div>
+            </a>
+          ) : null}
           <div className="p-6">
             <h3 className="text-2xl font-bold tracking-tight">
               {serviceText(service.shortTitle, locale)}
@@ -364,8 +366,8 @@ export function HomePage({ locale }: { locale: Locale }) {
       description: zh
         ? "按漏水、风暴损坏、瓦片、金属屋面、泛水或屋脊问题进入对应服务。"
         : "Start with leaks, storm damage, tiles, metal roofing, flashing or ridge issues.",
-      image: "/media/tile-roof-after.jpg",
-      imageAlt: zh ? "瓦屋面整体可见情况" : "Visible tiled roof condition",
+      image: "/media/commercial-roof-local-repairs.webp",
+      imageAlt: zh ? "商用金属屋顶局部处理" : "Local treatment on a commercial metal roof",
       href: localizedPath(locale, "/services"),
       action: zh ? "查看全部服务" : "View all services",
     },
@@ -375,8 +377,10 @@ export function HomePage({ locale }: { locale: Locale }) {
       description: zh
         ? "查看企业信息、服务方式、沟通边界，以及咨询时会核对哪些现场资料。"
         : "Review the business details, service approach, communication boundaries and enquiry information.",
-      image: "/media/tile-roof-finished-detail.jpg",
-      imageAlt: zh ? "已完工瓦屋面的可见细节" : "Visible detail of a finished tiled roof",
+      image: "/media/commercial-roof-sheet-junction.webp",
+      imageAlt: zh
+        ? "采光屋面板连接处的处理细节"
+        : "Treatment at a translucent roof-sheet junction",
       href: localizedPath(locale, "/about"),
       action: zh ? "了解服务方式" : "How we work",
     },
@@ -386,8 +390,8 @@ export function HomePage({ locale }: { locale: Locale }) {
       description: zh
         ? "了解照片、报价、检查与安全范围等常见屋顶维修问题。"
         : "Read common roof repair questions about photos, quotes, inspections and safe access.",
-      image: "/media/tile-detail-damaged-bedding.jpg",
-      imageAlt: zh ? "瓦片与砂浆连接位置的可见细节" : "Visible tile and bedding junction detail",
+      image: "/media/commercial-roof-corrosion.webp",
+      imageAlt: zh ? "金属屋面凸肋的锈蚀细节" : "Corrosion along metal roof ribs",
       href: "#home-faq",
       action: zh ? "查看常见问题" : "Read common questions",
     },
@@ -410,8 +414,8 @@ export function HomePage({ locale }: { locale: Locale }) {
       description: zh
         ? "查看按屋顶部位整理的照片组、可见事实、照片能说明什么以及仍需现场确认的边界。"
         : "Review roof-area photo sets, visible facts, what the images support and what still needs inspection.",
-      image: "/media/valley-flashing-repair-02.jpg",
-      imageAlt: zh ? "屋面谷与相邻瓦片的可见细节" : "Visible roof valley and adjacent tile detail",
+      image: "/media/commercial-gutter-treatment.webp",
+      imageAlt: zh ? "箱式天沟内的可见处理层" : "Visible treatment along a box gutter",
       href: localizedPath(locale, "/projects"),
       action: zh ? "查看项目资料" : "Review roof photos",
     },
@@ -421,8 +425,8 @@ export function HomePage({ locale }: { locale: Locale }) {
       description: zh
         ? "准备 suburb、屋顶类型、问题位置、发生时间与可安全拍摄的照片，提交初步咨询。"
         : "Share the suburb, roof type, problem area, timing and any photos that are safe to take.",
-      image: "/media/ridge-capping-repair-detail.jpg",
-      imageAlt: zh ? "屋脊封顶连接位置的可见细节" : "Visible ridge-capping junction detail",
+      image: "/media/commercial-gutter-overview.webp",
+      imageAlt: zh ? "屋顶边缘天沟的处理细节" : "Treatment along the roof-edge gutter",
       href: localizedPath(locale, "/contact"),
       action: zh ? "提交维修咨询" : "Send an enquiry",
     },
@@ -508,11 +512,11 @@ export function HomePage({ locale }: { locale: Locale }) {
           <div className="grid overflow-hidden rounded-lg border border-[var(--brand)]/10 bg-white shadow-sm lg:grid-cols-[.95fr_1.05fr]">
             <figure className="relative min-h-[340px] overflow-hidden lg:min-h-[460px]">
               <img
-                src="/media/valley-flashing-repair-01.jpg"
+                src="/media/commercial-roof-sheet-junction.webp"
                 alt={
                   zh
-                    ? "天沟谷泛水与相邻瓦片的可见细节"
-                    : "Visible valley flashing and adjoining tile detail"
+                    ? "采光屋面板下端连接处的处理细节"
+                    : "Treatment at the lower junction of a translucent roof sheet"
                 }
                 width="1280"
                 height="1707"
@@ -522,8 +526,8 @@ export function HomePage({ locale }: { locale: Locale }) {
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--ink)]/78 via-transparent to-transparent" />
               <figcaption className="absolute inset-x-4 bottom-4 rounded-lg border border-white/15 bg-[var(--ink)]/88 p-4 text-xs leading-5 text-white/78 backdrop-blur">
                 {zh
-                  ? "这类画面可帮助说明天沟谷、瓦片和连接处的空间关系，但不会仅凭照片确认原因或维修范围。"
-                  : "This kind of view can show the relationship between the valley, tiles and junction, without claiming a diagnosis or final scope from the image alone."}
+                  ? "这张照片展示采光屋面板连接处的局部处理。具体材料状况和维修范围仍需现场确认。"
+                  : "This photo records local treatment at a translucent roof-sheet junction. Material condition and the repair scope still need assessment."}
               </figcaption>
             </figure>
             <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
@@ -532,8 +536,8 @@ export function HomePage({ locale }: { locale: Locale }) {
               </h2>
               <p className="mt-4 text-base leading-7 text-[var(--muted)]">
                 {zh
-                  ? "项目资料按屋顶部位整理，让您先看清瓦片、泛水、天沟谷和金属屋面的可见关系，再准备自己的咨询信息。"
-                  : "Project photos are organised by roof area so you can compare visible tile, flashing, valley and metal-roof relationships before preparing an enquiry."}
+                  ? "查看商用金属屋顶补漏与除锈处理的现场照片，并参考瓦屋顶、屋脊及天沟谷的咨询要点。"
+                  : "See site photos of commercial metal-roof leak repairs and rust treatment, alongside enquiry guidance for tiles, ridges and valleys."}
               </p>
               <div className="mt-6 grid gap-3">
                 {[
@@ -588,8 +592,8 @@ export function HomePage({ locale }: { locale: Locale }) {
         <div className="container-shell grid max-w-[76rem] min-w-0 gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
           <figure className="relative min-h-[360px] overflow-hidden rounded-lg border border-[var(--brand)]/10 shadow-sm lg:min-h-[460px]">
             <img
-              src="/media/ridge-capping-repair-detail.jpg"
-              alt={zh ? "屋脊瓦与相邻瓦面作业细节" : "Ridge capping and adjoining tile roof detail"}
+              src="/media/commercial-gutter-overview.webp"
+              alt={zh ? "屋顶边缘与天沟处理细节" : "Roof-edge and gutter treatment detail"}
               width="960"
               height="1280"
               loading="lazy"
@@ -697,14 +701,16 @@ export function HomePage({ locale }: { locale: Locale }) {
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {blogPosts.slice(0, 3).map((post) => (
               <article key={post.slug} className="card overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={blogText(post.imageAlt, locale)}
-                  width="1080"
-                  height="811"
-                  loading="lazy"
-                  className="h-44 w-full object-cover"
-                />
+                {post.image ? (
+                  <img
+                    src={post.image}
+                    alt={blogText(post.imageAlt, locale)}
+                    width="1080"
+                    height="811"
+                    loading="lazy"
+                    className="h-44 w-full object-cover"
+                  />
+                ) : null}
                 <div className="p-5">
                   <p className="text-xs font-bold uppercase tracking-[.1em] text-[var(--brand)]">
                     {blogText(post.category, locale)} · {formatBlogDate(post.published, locale)}
@@ -884,19 +890,21 @@ export function ServiceDetailPage({ locale, service }: { locale: Locale; service
               </a>
             </div>
           </div>
-          <figure className="relative min-h-[450px] overflow-hidden rounded-[2.5rem] border border-white/12 lg:min-h-[560px]">
-            <img
-              src={service.image}
-              alt={serviceText(service.imageAlt, locale)}
-              width="1080"
-              height="1440"
-              fetchPriority="high"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <figcaption className="absolute inset-x-4 bottom-4 rounded-lg bg-[var(--ink)]/88 px-4 py-3 text-xs leading-5 text-white/75">
-              {commonCopy[locale].mediaDisclosure}
-            </figcaption>
-          </figure>
+          {service.image ? (
+            <figure className="relative min-h-[450px] overflow-hidden rounded-[2.5rem] border border-white/12 lg:min-h-[560px]">
+              <img
+                src={service.image}
+                alt={serviceText(service.imageAlt, locale)}
+                width="1080"
+                height="1440"
+                fetchPriority="high"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <figcaption className="absolute inset-x-4 bottom-4 rounded-lg bg-[var(--ink)]/88 px-4 py-3 text-xs leading-5 text-white/75">
+                {commonCopy[locale].mediaDisclosure}
+              </figcaption>
+            </figure>
+          ) : null}
         </div>
       </section>
       <section id="visible-signs" className="scroll-mt-40 bg-[var(--surface)] py-20 lg:py-24">
@@ -1158,10 +1166,18 @@ function ProjectGallery({ locale }: { locale: Locale }) {
             : "md:grid-cols-3 lg:grid-rows-2";
         return (
           <article id={project.id} key={project.id} className="card scroll-mt-28 overflow-hidden">
-            <div className="relative grid lg:grid-cols-[.82fr_1.18fr] lg:items-stretch">
+            <div
+              className={`relative grid ${project.images.length ? "lg:grid-cols-[.82fr_1.18fr] lg:items-stretch" : ""}`}
+            >
               <div className="p-7 md:p-9 lg:p-10">
                 <p className="eyebrow">
-                  {locale === "zh" ? "可见屋面细节" : "VISIBLE ROOF DETAILS"}
+                  {project.images.length
+                    ? locale === "zh"
+                      ? "现场维修记录"
+                      : "SITE WORK RECORD"
+                    : locale === "zh"
+                      ? "维修咨询要点"
+                      : "REPAIR ENQUIRY GUIDE"}
                 </p>
                 <h2 className="mt-4 text-3xl font-bold tracking-tight">
                   {projectText(project.title, locale)}
@@ -1170,7 +1186,13 @@ function ProjectGallery({ locale }: { locale: Locale }) {
                   {projectText(project.summary, locale)}
                 </p>
                 <h3 className="mt-7 text-sm font-bold uppercase tracking-[.12em] text-[var(--brand)]">
-                  {locale === "zh" ? "画面可以看见" : "What is visible"}
+                  {project.images.length
+                    ? locale === "zh"
+                      ? "画面可以看见"
+                      : "What is visible"
+                    : locale === "zh"
+                      ? "需要说明的情况"
+                      : "Details to describe"}
                 </h3>
                 <ul className="mt-4 grid gap-2.5 text-sm">
                   {project.visibleDetails[locale].map((item) => (
@@ -1222,53 +1244,55 @@ function ProjectGallery({ locale }: { locale: Locale }) {
                   ) : null}
                 </div>
               </div>
-              <div
-                className={`grid grid-cols-1 gap-3 bg-[var(--brand)] p-3 lg:absolute lg:inset-y-0 lg:right-0 lg:min-h-0 lg:w-[59%] ${imageGrid}`}
-              >
-                {project.images.map((image, index) => {
-                  const alt = projectText(image.alt, locale);
-                  const label = projectText(image.label, locale);
-                  const caption = projectText(image.caption, locale);
-                  const wideFirst =
-                    (project.images.length === 3 || project.images.length === 5) && index === 0;
-                  return (
-                    <figure
-                      key={image.src}
-                      className={`flex min-h-0 flex-col overflow-hidden rounded-lg bg-white ${wideFirst ? "md:col-span-2" : ""}`}
-                    >
-                      <button
-                        type="button"
-                        onClick={(event) => {
-                          openerRef.current = event.currentTarget;
-                          setActive({ projectIndex, imageIndex: index });
-                        }}
-                        className="group relative block aspect-[4/3] w-full overflow-hidden bg-[var(--border)] text-left lg:min-h-0 lg:flex-1 lg:aspect-auto"
-                        aria-label={`${locale === "zh" ? "放大查看" : "Open larger image"}: ${label}`}
+              {project.images.length > 0 ? (
+                <div
+                  className={`grid grid-cols-1 gap-3 bg-[var(--brand)] p-3 lg:absolute lg:inset-y-0 lg:right-0 lg:min-h-0 lg:w-[59%] ${imageGrid}`}
+                >
+                  {project.images.map((image, index) => {
+                    const alt = projectText(image.alt, locale);
+                    const label = projectText(image.label, locale);
+                    const caption = projectText(image.caption, locale);
+                    const wideFirst =
+                      (project.images.length === 3 || project.images.length === 5) && index === 0;
+                    return (
+                      <figure
+                        key={image.src}
+                        className={`flex min-h-0 flex-col overflow-hidden rounded-lg bg-white ${wideFirst ? "md:col-span-2" : ""}`}
                       >
-                        <img
-                          src={image.src}
-                          alt={alt}
-                          width="1080"
-                          height="1440"
-                          loading="lazy"
-                          className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"
-                        />
-                        <span className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-[var(--accent-pale)] text-[var(--ink)] shadow">
-                          <Images className="h-4 w-4" />
-                        </span>
-                      </button>
-                      <figcaption className="p-4">
-                        <span className="block text-xs font-bold uppercase tracking-[.1em] text-[var(--brand)]">
-                          {label}
-                        </span>
-                        <span className="mt-2 block text-sm leading-6 text-[var(--muted)]">
-                          {caption}
-                        </span>
-                      </figcaption>
-                    </figure>
-                  );
-                })}
-              </div>
+                        <button
+                          type="button"
+                          onClick={(event) => {
+                            openerRef.current = event.currentTarget;
+                            setActive({ projectIndex, imageIndex: index });
+                          }}
+                          className="group relative block aspect-[4/3] w-full overflow-hidden bg-[var(--border)] text-left lg:min-h-0 lg:flex-1 lg:aspect-auto"
+                          aria-label={`${locale === "zh" ? "放大查看" : "Open larger image"}: ${label}`}
+                        >
+                          <img
+                            src={image.src}
+                            alt={alt}
+                            width="1080"
+                            height="1440"
+                            loading="lazy"
+                            className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"
+                          />
+                          <span className="absolute right-3 top-3 grid h-10 w-10 place-items-center rounded-full bg-[var(--accent-pale)] text-[var(--ink)] shadow">
+                            <Images className="h-4 w-4" />
+                          </span>
+                        </button>
+                        <figcaption className="p-4">
+                          <span className="block text-xs font-bold uppercase tracking-[.1em] text-[var(--brand)]">
+                            {label}
+                          </span>
+                          <span className="mt-2 block text-sm leading-6 text-[var(--muted)]">
+                            {caption}
+                          </span>
+                        </figcaption>
+                      </figure>
+                    );
+                  })}
+                </div>
+              ) : null}
             </div>
           </article>
         );

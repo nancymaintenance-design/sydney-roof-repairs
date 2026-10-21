@@ -10,7 +10,7 @@ export const Route = createFileRoute("/zh-hans/")({
       locale: "zh",
       englishPath: "/",
       chinesePath: "/zh-hans",
-      image: "/media/tile-roof-after.jpg",
+      image: "/media/commercial-roof-overview.webp",
     }),
   component: () => <HomePage locale="zh" />,
 });

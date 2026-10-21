@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
         "Sydney roof repair enquiries for leaks, storm damage, tile and metal roofs, flashing, valleys and ridge capping.",
       path: "/",
       locale: "en",
-      image: "/media/tile-roof-after.jpg",
+      image: "/media/commercial-roof-overview.webp",
     }),
   component: () => <HomePage locale="en" />,
 });

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/projects")({
         "Review visible tile, ridge, valley, flashing and metal-roof details, including what each view can help describe and what still needs assessment.",
       path: "/projects",
       locale: "en",
-      image: "/media/valley-flashing-repair-01.jpg",
+      image: "/media/commercial-roof-overview.webp",
     }),
   component: () => <ProjectsPage locale="en" />,
 });

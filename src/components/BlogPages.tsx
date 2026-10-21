@@ -159,21 +159,23 @@ function PostCard({
   const guidePreview = featured ? post.sections.slice(0, 3) : [];
   return (
     <article className="group overflow-hidden rounded-lg border border-[var(--brand)]/12 bg-white shadow-sm">
-      <a
-        href={blogPath(post, locale)}
-        className={`block overflow-hidden no-underline ${featured ? "h-72 sm:h-[26rem]" : ""}`}
-      >
-        <img
-          src={post.image}
-          alt={blogText(post.imageAlt, locale)}
-          width="1080"
-          height="811"
-          loading="lazy"
-          className={`w-full object-cover transition duration-500 group-hover:scale-[1.025] ${
-            featured ? "h-full" : "h-56"
-          }`}
-        />
-      </a>
+      {post.image ? (
+        <a
+          href={blogPath(post, locale)}
+          className={`block overflow-hidden no-underline ${featured ? "h-72 sm:h-[26rem]" : ""}`}
+        >
+          <img
+            src={post.image}
+            alt={blogText(post.imageAlt, locale)}
+            width="1080"
+            height="811"
+            loading="lazy"
+            className={`w-full object-cover transition duration-500 group-hover:scale-[1.025] ${
+              featured ? "h-full" : "h-56"
+            }`}
+          />
+        </a>
+      ) : null}
       <div className="flex flex-col p-6 md:p-8">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold text-[var(--muted)]">
           <span className="rounded-full bg-[var(--accent-pale)] px-3 py-1 text-[var(--brand)]">
@@ -405,20 +407,22 @@ export function BlogDetailPage({ locale, post }: { locale: Locale; post: BlogPos
                 </ol>
               </nav>
             </section>
-            <figure className="overflow-hidden rounded-lg bg-[var(--brand)]">
-              <img
-                src={post.image}
-                alt={blogText(post.imageAlt, locale)}
-                width="1280"
-                height="960"
-                className="max-h-[560px] w-full object-cover"
-              />
-              <figcaption className="px-6 py-4 text-sm leading-6 text-white/70">
-                {zh
-                  ? "示意画面用于说明可见屋顶部位；实际原因和维修范围仍需结合具体房屋确认。"
-                  : "This illustrative roof view supports component identification; the actual cause and repair scope still depend on the property."}
-              </figcaption>
-            </figure>
+            {post.image ? (
+              <figure className="overflow-hidden rounded-lg bg-[var(--brand)]">
+                <img
+                  src={post.image}
+                  alt={blogText(post.imageAlt, locale)}
+                  width="1280"
+                  height="960"
+                  className="max-h-[560px] w-full object-cover"
+                />
+                <figcaption className="px-6 py-4 text-sm leading-6 text-white/70">
+                  {zh
+                    ? "示意画面用于说明可见屋顶部位；实际原因和维修范围仍需结合具体房屋确认。"
+                    : "This illustrative roof view supports component identification; the actual cause and repair scope still depend on the property."}
+                </figcaption>
+              </figure>
+            ) : null}
             <div className="prose-safe mt-12 max-w-none">
               {post.sections.map((section, index) => (
                 <section

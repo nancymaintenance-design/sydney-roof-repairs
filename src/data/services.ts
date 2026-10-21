@@ -111,7 +111,7 @@ export const services: RoofService[] = [
         },
       },
     ],
-    image: "/media/tile-repair-open-section.jpg",
+    image: "",
     imageAlt: {
       en: "Open tile roof section documented during roof work",
       zh: "屋顶作业中记录的瓦屋顶开放部位",
@@ -207,7 +207,7 @@ export const services: RoofService[] = [
         },
       },
     ],
-    image: "/media/tile-detail-damaged-bedding.jpg",
+    image: "",
     imageAlt: { en: "Weathered tile and bedding detail", zh: "风化瓦片和垫层细节" },
   },
   {
@@ -303,7 +303,7 @@ export const services: RoofService[] = [
         },
       },
     ],
-    image: "/media/tile-roof-after.jpg",
+    image: "",
     imageAlt: { en: "Wide view of a documented tile roof", zh: "真实记录的瓦屋顶整体画面" },
   },
   {
@@ -495,7 +495,7 @@ export const services: RoofService[] = [
         },
       },
     ],
-    image: "/media/valley-flashing-repair-01.jpg",
+    image: "",
     imageAlt: {
       en: "Close view of documented valley flashing work",
       zh: "真实记录的天沟谷泛水作业细节",
@@ -600,7 +600,7 @@ export const services: RoofService[] = [
         },
       },
     ],
-    image: "/media/ridge-capping-repair-detail.jpg",
+    image: "",
     imageAlt: {
       en: "Ridge capping and pointing detail documented during roof work",
       zh: "屋顶作业中记录的屋脊瓦和勾缝细节",
