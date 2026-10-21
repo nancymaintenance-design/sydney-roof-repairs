@@ -226,91 +226,140 @@ export const projects: ProjectStory[] = [
   },
   {
     id: "metal-roof-box-gutter-details",
-    evidenceLevel: 2,
+    evidenceLevel: 3,
     serviceIds: ["metal-roof-repairs-sydney"],
     title: {
-      en: "Metal roof, flashing and box-gutter details",
-      zh: "金属屋面、泛水与箱式天沟细节",
+      en: "Commercial metal roof leak repairs and rust treatment",
+      zh: "商用金属屋顶补漏与除锈处理",
     },
     summary: {
-      en: "These views show folded metal junctions, box-gutter edges and the wider roof area around the drainage path.",
-      zh: "这些画面展示金属折边连接、箱式天沟边缘以及排水路径周围的整体屋面。",
+      en: "This commercial roof maintenance job focused on leak repairs and rust treatment while retaining existing roof materials. The photos document the original corrosion, local treatment at roof-sheet junctions and work along the box gutter.",
+      zh: "这项商用屋顶维修以补漏和除锈处理为重点，在保留现有屋面材料的基础上进行局部修补。照片记录原有锈蚀、屋面板连接处的局部处理及箱式天沟处理。",
     },
     visibleDetails: {
       en: [
-        "Folded metal flashing and adjoining sheet edges",
-        "Box-gutter junctions at close range",
-        "Wider metal-roof drainage context",
+        "Corrosion on existing metal roof ribs before treatment",
+        "Local coating and sealing around sheet junctions",
+        "Grey treatment along the box gutter; existing sheets retained",
       ],
-      zh: ["金属折边泛水与相邻板材边缘", "箱式天沟连接近景", "金属屋面整体排水环境"],
+      zh: [
+        "处理前原有金属屋面凸肋的锈蚀",
+        "屋面板连接处的局部涂覆与密封处理",
+        "箱式天沟内的灰色处理层，以及保留的原有板材",
+      ],
     },
     enquiryUse: {
-      en: "Share the roof profile, a wider view of the drainage route and a safe close-up of the affected junction, plus any indoor water marks.",
-      zh: "请提供屋面板型、排水路径整体画面和受影响连接处的安全近景，并说明室内是否有水痕。",
+      en: "Repair, partial replacement or full replacement? The suitable option depends on the condition of the existing material, the source of the leak, access and your budget. A local repair may keep sound materials in service, although its appearance can differ from a new roof. We explain the scope and limitations before work starts, with the same commitment to reliable service and workmanship.",
+      zh: "选择局部修补、部分更换还是整体换新，需要结合现有材料状况、漏水原因、施工通道和预算。局部修补可让状况良好的材料继续发挥使用价值，但外观可能不如整体换新。施工前说明范围和局限，对可靠服务与施工质量的要求保持一致。",
     },
     limitation: {
-      en: "The photos do not confirm water flow under rain, concealed corrosion, fastener condition or a completed repair outcome.",
-      zh: "这些照片不能确认降雨时的水流、隐藏腐蚀、紧固件状况或维修完成结果。",
+      en: "Visible treatment is recorded here; these photos are not a rainfall test or a ten-year service-life guarantee. Repair suitability and concealed corrosion require inspection.",
+      zh: "这里记录的是可见处理情况；照片不代表已通过雨水测试，也不构成十年使用寿命保证。是否适合修补及隐藏锈蚀仍需检查。",
     },
     images: [
       {
-        src: "/media/metal-roof-flashing-condition.jpg",
-        label: { en: "Folded flashing line", zh: "折边泛水线" },
+        src: "/media/commercial-roof-corrosion.webp",
+        label: {
+          en: "Roof corrosion before treatment",
+          zh: "处理前的屋面锈蚀",
+        },
         caption: {
-          en: "The folded flashing and adjoining sheet edge can be seen along the junction.",
-          zh: "可见连接处的折边泛水和相邻板材边缘。",
+          en: "Surface corrosion is visible along the raised metal ribs beside the wall.",
+          zh: "靠墙金属屋面凸肋可见表面锈蚀。",
         },
         alt: {
-          en: "Folded metal flashing beside a roof sheet edge",
-          zh: "屋面板边缘旁的金属折边泛水",
+          en: "Roof corrosion before treatment — Surface corrosion is visible along the raised metal ribs beside the wall.",
+          zh: "处理前的屋面锈蚀：靠墙金属屋面凸肋可见表面锈蚀。",
         },
       },
       {
-        src: "/media/metal-roof-flashing-detail.jpg",
-        label: { en: "Metal junction detail", zh: "金属连接细节" },
+        src: "/media/commercial-box-gutter-before.webp",
+        label: {
+          en: "Box gutter before treatment",
+          zh: "处理前的箱式天沟",
+        },
         caption: {
-          en: "A closer angle records the fold and overlap at the metal junction.",
-          zh: "更近的角度记录金属连接处的折边和搭接。",
+          en: "Deposits and surface discolouration are visible in the gutter beside the roof sheets.",
+          zh: "屋面板旁的天沟内可见沉积物和表面变色。",
         },
         alt: {
-          en: "Close view of a folded and overlapped metal roof junction",
-          zh: "金属屋面折边与搭接连接近景",
+          en: "Box gutter before treatment — Deposits and surface discolouration are visible in the gutter beside the roof sheets.",
+          zh: "处理前的箱式天沟：屋面板旁的天沟内可见沉积物和表面变色。",
         },
       },
       {
-        src: "/media/metal-box-gutter-detail.jpg",
-        label: { en: "Box-gutter edge", zh: "箱式天沟边缘" },
+        src: "/media/commercial-roof-local-repairs.webp",
+        label: {
+          en: "Local roof treatment",
+          zh: "屋面局部处理",
+        },
         caption: {
-          en: "The close view shows the box-gutter edge and the metal surfaces meeting beside it.",
-          zh: "近景展示箱式天沟边缘和相邻金属表面的连接。",
+          en: "Local coating and sealing areas are visible while the surrounding roof sheets remain in place.",
+          zh: "局部涂覆与密封处理区域清晰可见，周围原有屋面板保留。",
         },
         alt: {
-          en: "Close view of a metal box-gutter edge and junction",
-          zh: "金属箱式天沟边缘与连接近景",
+          en: "Local roof treatment — Local coating and sealing areas are visible while the surrounding roof sheets remain in place.",
+          zh: "屋面局部处理：局部涂覆与密封处理区域清晰可见，周围原有屋面板保留。",
         },
       },
       {
-        src: "/media/metal-box-gutter-overview.jpg",
-        label: { en: "Box-gutter route", zh: "箱式天沟走向" },
+        src: "/media/commercial-roof-sheet-junction.webp",
+        label: {
+          en: "Translucent sheet junction",
+          zh: "采光板连接处",
+        },
         caption: {
-          en: "The wider view helps describe how the box gutter sits within the surrounding roof area.",
-          zh: "整体画面有助于说明箱式天沟在周围屋面中的位置。",
+          en: "A coating band follows the lower junction of the translucent roof sheet.",
+          zh: "采光屋面板下端连接处可见一道涂覆处理带。",
         },
         alt: {
-          en: "Box gutter running through a wider metal roof area",
-          zh: "穿过金属屋面区域的箱式天沟",
+          en: "Translucent sheet junction — A coating band follows the lower junction of the translucent roof sheet.",
+          zh: "采光板连接处：采光屋面板下端连接处可见一道涂覆处理带。",
         },
       },
       {
-        src: "/media/metal-roof-repair-overview.jpg",
-        label: { en: "Wider metal roof context", zh: "金属屋面整体环境" },
+        src: "/media/commercial-roof-overview.webp",
+        label: {
+          en: "Commercial roof repair overview",
+          zh: "商用屋顶修补整体画面",
+        },
         caption: {
-          en: "This wider angle places the junctions and drainage route within the full roof plane.",
-          zh: "该整体角度显示连接处和排水路径在完整屋面中的位置。",
+          en: "The wider view shows local treatment beside roof-mounted equipment and existing roof sheets.",
+          zh: "整体画面展示屋顶设备旁的局部处理和保留的原有屋面板。",
         },
         alt: {
-          en: "Wide metal roof plane with drainage junctions",
-          zh: "带排水连接的金属屋面整体画面",
+          en: "Commercial roof repair overview — The wider view shows local treatment beside roof-mounted equipment and existing roof sheets.",
+          zh: "商用屋顶修补整体画面：整体画面展示屋顶设备旁的局部处理和保留的原有屋面板。",
+        },
+      },
+      {
+        src: "/media/commercial-gutter-treatment.webp",
+        label: {
+          en: "Box-gutter treatment",
+          zh: "箱式天沟处理",
+        },
+        caption: {
+          en: "A grey treatment layer is visible along the box gutter beside existing solar panels.",
+          zh: "现有太阳能板旁的箱式天沟内可见灰色处理层。",
+        },
+        alt: {
+          en: "Box-gutter treatment — A grey treatment layer is visible along the box gutter beside existing solar panels.",
+          zh: "箱式天沟处理：现有太阳能板旁的箱式天沟内可见灰色处理层。",
+        },
+      },
+      {
+        src: "/media/commercial-gutter-overview.webp",
+        label: {
+          en: "Roof-edge drainage detail",
+          zh: "屋顶边缘排水细节",
+        },
+        caption: {
+          en: "The wider angle records the treated gutter and its position along the roof edge.",
+          zh: "较宽角度记录处理后的天沟及其在屋顶边缘的位置。",
+        },
+        alt: {
+          en: "Roof-edge drainage detail — The wider angle records the treated gutter and its position along the roof edge.",
+          zh: "屋顶边缘排水细节：较宽角度记录处理后的天沟及其在屋顶边缘的位置。",
         },
       },
     ],

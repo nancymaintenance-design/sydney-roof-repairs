@@ -279,7 +279,7 @@ function HomeHero({ locale }: { locale: Locale }) {
       <div className="container-shell home-hero-layout">
         <figure className="home-hero-photo">
           <img
-            src="/media/metal-roof-repair-overview.jpg"
+            src="/media/commercial-roof-overview.webp"
             alt={
               zh ? "金属屋面与泛水连接处的可见情况" : "Visible metal roof and flashing junctions"
             }
@@ -397,8 +397,10 @@ export function HomePage({ locale }: { locale: Locale }) {
       description: zh
         ? "按 Sydney 区域查看承接说明，并用 suburb 或邮编确认具体地址是否适合安排。"
         : "Review Sydney coverage, then use a suburb or postcode to confirm whether an address is a fit.",
-      image: "/media/metal-roof-repair-overview.jpg",
-      imageAlt: zh ? "悉尼住宅金属屋面整体视图" : "Wide view of a residential metal roof",
+      image: "/media/commercial-roof-overview.webp",
+      imageAlt: zh
+        ? "商用金属屋顶局部处理整体画面"
+        : "Wide view of local treatment on a commercial metal roof",
       href: localizedPath(locale, "/areas"),
       action: zh ? "核对服务区域" : "Check your area",
     },

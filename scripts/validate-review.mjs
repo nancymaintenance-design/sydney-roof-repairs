@@ -314,13 +314,13 @@ for (const field of [
 ]) {
   if (!media.includes(`${field}:`)) failures.push(`project evidence field missing: ${field}`);
 }
-if ((media.match(/src: "\/media\//g) || []).length !== 15)
-  failures.push("project evidence gallery must contain exactly 15 selected images");
+if ((media.match(/src: "\/media\//g) || []).length !== 17)
+  failures.push("project evidence gallery must contain exactly 17 selected images");
 const imageCounts = [...media.matchAll(/images:\s*\[([\s\S]*?)\n\s*\],/g)].map(
   (match) => (match[1].match(/src: "\/media\//g) || []).length,
 );
-if (imageCounts.join(",") !== "3,3,4,5")
-  failures.push(`project image groups must be 3/3/4/5, found ${imageCounts.join("/")}`);
+if (imageCounts.join(",") !== "3,3,4,7")
+  failures.push(`project image groups must be 3/3/4/7, found ${imageCounts.join("/")}`);
 if (!pages.includes("href={evidencePath(service, locale)}"))
   failures.push("Home service cards do not render Projects evidence links");
 if (!pages.includes("href={contactPath(relatedServices[0], locale)}"))
@@ -411,7 +411,7 @@ if (mediaCount !== 18)
   failures.push(`expected 18 selected public media files, found ${mediaCount}`);
 else if (!failures.some((item) => item.startsWith("Home supporting media missing")))
   pass.push(
-    "18 existing media files are preserved and 15 remain in Projects evidence groups; the Home render check verifies the selected original roof photograph",
+    "18 existing media files are preserved and 17 images appear in Projects evidence groups, including the new commercial repair record; the Home render check verifies the selected original roof photograph",
   );
 
 const behaviorChecks = spawnSync(

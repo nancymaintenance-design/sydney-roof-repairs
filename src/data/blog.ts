@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Roof materials", "屋顶材料"),
     published: "2026-09-18",
     readingMinutes: 8,
-    image: "/media/metal-roof-repair-overview.jpg",
+    image: "/media/commercial-roof-overview.webp",
     imageAlt: t("Residential metal roof overview", "住宅金属屋顶整体画面"),
     relatedServiceIds: ["tile-roof-repairs-sydney", "metal-roof-repairs-sydney"],
     sections: [
@@ -423,7 +423,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Metal roofs", "金属屋顶"),
     published: "2026-09-18",
     readingMinutes: 8,
-    image: "/media/metal-box-gutter-overview.jpg",
+    image: "/media/commercial-gutter-overview.webp",
     imageAlt: t("Metal roof and box gutter overview", "金属屋顶与箱式天沟整体画面"),
     relatedServiceIds: ["metal-roof-repairs-sydney", "flashing-valley-repairs-sydney"],
     sections: [
@@ -484,7 +484,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Enquiry planning", "咨询准备"),
     published: "2026-09-18",
     readingMinutes: 7,
-    image: "/media/metal-roof-flashing-detail.jpg",
+    image: "/media/commercial-roof-sheet-junction.webp",
     imageAlt: t("Metal roof flashing and adjoining surface detail", "金属屋顶泛水及相邻表面细节"),
     relatedServiceIds: ["roof-leak-repairs-sydney", "metal-roof-repairs-sydney"],
     sections: [
@@ -745,7 +745,7 @@ export const blogPosts: BlogPost[] = [
     category: t("Enquiry planning", "咨询准备"),
     published: "2026-09-18",
     readingMinutes: 9,
-    image: "/media/metal-roof-repair-overview.jpg",
+    image: "/media/commercial-roof-overview.webp",
     imageAlt: t("Roof areas used to plan a repair enquiry", "用于准备维修咨询的屋顶部位画面"),
     relatedServiceIds: ["roof-leak-repairs-sydney", "storm-damage-roof-repairs-sydney"],
     sections: [
@@ -814,10 +814,10 @@ export const blogPosts: BlogPost[] = [
     category: t("Roof components", "屋顶构件"),
     published: "2026-09-18",
     readingMinutes: 7,
-    image: "/media/metal-roof-flashing-condition.jpg",
+    image: "/media/commercial-roof-corrosion.webp",
     imageAlt: t(
-      "Visible flashing condition beside a metal roof junction",
-      "金属屋面交接旁的可见泛水状况",
+      "Visible corrosion along metal roof ribs beside a wall",
+      "墙边金属屋面凸肋的可见锈蚀",
     ),
     relatedServiceIds: ["flashing-valley-repairs-sydney", "metal-roof-repairs-sydney"],
     sections: [

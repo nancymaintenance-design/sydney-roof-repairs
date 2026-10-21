@@ -399,7 +399,7 @@ export const services: RoofService[] = [
         },
       },
     ],
-    image: "/media/metal-roof-repair-overview.jpg",
+    image: "/media/commercial-roof-overview.webp",
     imageAlt: { en: "Documented metal roof and flashing work", zh: "真实记录的金属屋顶和泛水作业" },
   },
   {

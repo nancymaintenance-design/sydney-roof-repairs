@@ -71,11 +71,11 @@ test("both homepages retain the approved static opening, existing intent and con
     assert.equal((portal.match(/class="[^"]*\bhome-portal-card\b[^"]*"/g) ?? []).length, 6);
     const photo = hero.match(/<figure\b[^>]*class="home-hero-photo"[^>]*>\s*(<img\b[^>]*>)/)?.[1];
     assert.ok(photo);
-    assert.match(photo, /src="\/media\/metal-roof-repair-overview\.jpg"/);
+    assert.match(photo, /src="\/media\/commercial-roof-overview\.webp"/);
     assert.match(photo, /width="1920"/);
     assert.match(photo, /height="1080"/);
     assert.match(photo, /alt="[^"]+"/);
-    assert.ok(fs.existsSync(new URL("public/media/metal-roof-repair-overview.jpg", root)));
+    assert.ok(fs.existsSync(new URL("public/media/commercial-roof-overview.webp", root)));
     assert.doesNotMatch(hero, /aria-roledescription="carousel"|Pause automatic rotation/);
     assert.doesNotMatch(hero, /hero-(ridge-inspection|metal-flashing)-closeup/);
   }
