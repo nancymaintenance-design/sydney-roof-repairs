@@ -21,6 +21,7 @@ import {
   X,
 } from "lucide-react";
 import { ClarityPrivacy } from "./ClarityPrivacy";
+import { RoofRepairVideos } from "./RoofRepairVideos";
 import { useEffect, useRef, useState } from "react";
 import { business } from "@/config/business";
 import { blogPath, blogPosts, blogText, formatBlogDate } from "@/data/blog";
@@ -1389,6 +1390,7 @@ export function ProjectsPage({ locale }: { locale: Locale }) {
       <section id="project-groups" className="scroll-mt-32 py-24">
         <div className="container-shell grid gap-8">
           <ProjectGallery locale={locale} />
+          <RoofRepairVideos locale={locale} />
         </div>
       </section>
       <div id="projects-faq" className="scroll-mt-32">
